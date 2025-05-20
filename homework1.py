@@ -11,7 +11,8 @@ from sklearn.metrics import root_mean_squared_error
 df = pd.read_parquet('./data/yellow_tripdata_2023-01.parquet', engine='pyarrow')
 val_df = pd.read_parquet('./data/yellow_tripdata_2023-02.parquet', engine='pyarrow')
 #df.info()
-val_df.info()
+num_columns = len(df.columns)
+print("Number of columns:", num_columns)
 
 #computing duration and its standard deviation
 df["tpep_pickup_datetime"] = pd.to_datetime(df.tpep_pickup_datetime)
